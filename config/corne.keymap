@@ -13,52 +13,52 @@
 
         Escape {
             bindings = <&kp ESC>;
-            key-positions = <0 11>;
+            key-positions = <8 17>;
         };
 
         OpenParenthesis {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <6 7>;
+            key-positions = <4 5>;
         };
 
         OpenBrace {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <18 19>;
+            key-positions = <24 25>;
         };
 
         OpenBracket {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <30 31>;
+            key-positions = <36 37>;
         };
 
         CloseParenthasis {
             bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <8 7>;
+            key-positions = <5 6>;
         };
 
         CloseBrace {
             bindings = <&kp RIGHT_BRACE>;
-            key-positions = <19 20>;
+            key-positions = <25 26>;
         };
 
         CloseBracket {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <31 32>;
+            key-positions = <37 38>;
         };
 
         LessThan {
             bindings = <&kp LESS_THAN>;
-            key-positions = <3 4>;
+            key-positions = <1 2>;
         };
 
         GreatherThan {
             bindings = <&kp GREATER_THAN>;
-            key-positions = <4 5>;
+            key-positions = <2 3>;
         };
 
         Enter {
             bindings = <&kp ENTER>;
-            key-positions = <38 39>;
+            key-positions = <54 55>;
         };
     };
 
@@ -67,46 +67,64 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | ENTR |
-            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | ./, | '/" |  /* | EQU |
-            //                    | GUI | LWR | SPC |   | SPC | L2   | L1  |
+            //              |  2  |  3  |  4  |  5  |                                      |  6  |  7  |  8  |  9  |              
+            //        |  1  |  W  |  E  |  R  |  T  |                                      |  Y  |  U  |  I  |  O  |  0  |      
+            //  | TAB |  Q  |  S  |  D  |  F  |  G  |                                      |  H  |  J  |  K  |  L  |  P  | BSLS |
+            //  | ESC |  A  |  X  |  C  |  V  |  B  |                                      |  N  |  M  |  ,  |  .  |  ;  | QUOT |
+            //  | SHFT|  Z  | LFT | RGT |             | LCTL |                      | LCTL |             | UP  | DWN | SLS | SHFT|
+            //                                                | LALT | LGUI |  | LGUI | ENT |                                     
+            //                                                | BSPC | DEL  |  | BSPC | SPC |
 
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E     &kp R         &kp T        &kp Y      &kp U  &kp I          &kp O                  &kp P          &kp BSPC
-&kp LEFT_SHIFT  &kp A  &kp S  &kp D     &kp F         &kp G        &kp H      &kp J  &kp K          &kp L                  &kp SEMI       &kp ENTER
-&kp LCTRL       &kp Z  &kp X  &kp C     &kp V         &kp B        &kp N      &kp M  &mt COMMA DOT  &mt SQT DOUBLE_QUOTES  &mt STAR FSLH  &kp ESC
-                              &kp LGUI  &kp LEFT_ALT  &kp SPACE    &kp SPACE  &mo 2  &mo 1
+                        &kp N2         &kp N3    &kp N4     &kp N5                                            &kp N6      &kp N7     &kp N8    &kp N9
+                &kp N1  &kp W          &kp E     &kp R      &kp T                                             &kp Y       &kp U      &kp I     &kp O     &kp N0
+        &kp TAB &kp Q   &kp S          &kp D     &kp F      &kp G                                             &kp H       &kp J      &kp K     &kp L     &kp P     &kp BSLH
+        &kp ESC &kp A   &kp X          &kp C     &kp V      &kp B                                             &kp N       &kp M      &kp COMMA &kp DOT   &kp SEMI  &kp SQT
+        &kp LSHFT &kp Z &kp LEFT       &kp RIGHT                    &kp LCTRL                         &kp LCTRL                      &kp UP    &kp DOWN  &kp FSLH  &kp RSHFT
+                                                                                 &kp LALT   &kp LGUI  &kp LGUI  &kp ENTER
+                                                                                 &kp BSPC   &kp DEL   &kp BSPC  &kp SPACE
             >;
         };
 
         lower_layer {
             // -----------------------------------------------------------------------------------------
-            // | SYSR |     |     |     |     |     |   |     |  1  |  2  |  3  |  0  |      |
-            // |      |     |     | UP  |     |     |   |     |  4  |  5  |  6  |     |      |
-            // |      |     | LFT | DWN | RGT |     |   |     |  7  |  8  |  9  |     |      |
-            //                    |     |     | SPC |   | SPC |     |     |
+            //              |     |     |     |     |                                      |     |     |     |     |              
+            //        |     |     |     |     |     |                                      |     |     |     |     |     |      
+            //  | SYSR|     |     | UP  |     |     |                                      |     |  7  |  8  |  9  |     |     |
+            //  |     |     | LFT | DWN | RGT |     |                                      |     |  4  |  5  |  6  |     |     |
+            //  |     |     |     |     |             |     |                       |     |             |  1  |  2  |  3  |     |
+            //                                                |     |     |  |     |     |                                     
+            //                                                | SPC | SPC |  |     |  0  |
 
             bindings = <
-&sys_reset  &trans  &trans    &trans    &trans     &trans       &trans   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0  &trans
-&trans      &trans  &trans    &kp UP    &trans     &trans       &trans   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans
-&trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans       &trans   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans  &trans
-                              &trans    &trans     &kp SPACE    &kp SPACE  &trans        &trans
+                        &trans  &trans    &trans    &trans                                            &trans  &trans        &trans        &trans
+                &trans  &trans  &trans    &trans    &trans                                            &trans  &trans        &trans        &trans        &trans
+        &sys_reset &trans &trans &kp UP    &trans    &trans                                            &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans  &trans
+        &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT &trans                                            &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans
+        &trans  &trans  &trans    &trans                      &trans                            &trans                      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+                                                                               &trans    &trans  &trans  &trans
+                                                                               &kp SPACE &kp SPACE &trans &kp N0
             >;
         };
 
         raise_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  &  |  %  |   |  ^  |  $  |  *  |  (  |  )  | BSPC |
-            // | CTRL |MUTE |V_UP |V_DWN|  <  |  >  |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | SPC |     | ALT |
+            //              |  !  |  @  |  #  |  &  |                                      |  ^  |  $  |  *  |  (  |              
+            //        |  %  |MUTE |V_DN |V_UP |  <  |                                      |  -  |  =  |  [  |  ]  |  )  |      
+            //  | TAB |     |     |     |     |  >  |                                      |  _  |  +  |  {  |  }  | "|" | BSPC |
+            //  | CTRL|     |     |     |     |     |                                      |     |     |     |     |  \  |  `   |
+            //  | SHFT|     |     |     |             | LGUI |                      |     |             |     |     |     |  ~   |
+            //                                                |     | SPC |  | SPC | RALT |                                     
+            //                                                |     |     |  |     |     |
 
             bindings = <
-&kp TAB    &kp EXCL     &kp AT              &kp HASH            &kp AMPERSAND  &kp PRCNT           &kp CARET  &kp DOLLAR  &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &kp C_MUTE   &kp C_VOLUME_DOWN   &kp C_VOLUME_UP     &kp LESS_THAN  &kp GREATER_THAN    &kp MINUS  &kp EQUAL   &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans       &trans              &trans              &trans         &trans              &kp UNDER  &kp PLUS    &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                            &kp LGUI            &trans         &kp SPACE           &kp SPACE    &trans      &kp RALT
+                        &kp EXCL        &kp AT            &kp HASH            &kp AMPERSAND                                            &kp CARET  &kp DOLLAR  &kp ASTRK  &kp LPAR
+                &kp PRCNT  &kp C_MUTE   &kp C_VOLUME_DOWN &kp C_VOLUME_UP     &kp LESS_THAN                                            &kp MINUS  &kp EQUAL   &kp LBKT   &kp RBKT  &kp RPAR
+        &kp TAB &trans      &trans       &trans            &trans              &kp GREATER_THAN                                         &kp UNDER  &kp PLUS    &kp LBRC   &kp RBRC  &kp PIPE  &kp BSPC
+        &kp LCTRL &trans    &trans       &trans            &trans              &trans                                                   &trans     &trans      &trans     &trans    &kp BSLH  &kp GRAVE
+        &kp LSHFT &trans    &trans       &trans                                        &kp LGUI                         &trans                                  &trans     &trans    &trans    &kp TILDE
+                                                                                                   &trans    &kp SPACE  &kp SPACE  &kp RALT
+                                                                                                   &trans    &trans     &trans     &trans
             >;
         };
     };

@@ -8,19 +8,26 @@
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <12>;  
+        columns = <18>;  
         rows = <7>;    
 
-        //       | SW1  | SW2  | SW3  | SW4  | SW5  | SW6  |   | SW6  | SW5  | SW4  | SW3  | SW2  | SW1  |
-        //       | SW7  | SW8  | SW9  | SW10 | SW11 | SW12 |   | SW12 | SW11 | SW10 | SW9  | SW8  | SW7  |
-        //       | SW13 | SW14 | SW15 | SW16 | SW17 | SW18 |   | SW18 | SW17 | SW16 | SW15 | SW14 | SW13 |
-        //                            | SW19 | SW20 | SW21 |   | SW21 | SW20 | SW19 |
+        // QMK Layout mapping from kb.h:
+        //              | K002 | K003 | K004 | K005 |                                      | K012 | K013 | K014 | K015 |              
+        //        | K101 | K102 | K103 | K104 | K105 |                                      | K112 | K113 | K114 | K115 | K116 |      
+        //  | K200 | K201 | K202 | K203 | K204 | K205 |                                      | K212 | K213 | K214 | K215 | K216 | K217 |
+        //  | K300 | K301 | K302 | K303 | K304 | K305 |                                      | K312 | K313 | K314 | K315 | K316 | K317 |
+        //  | K400 | K401 | K402 | K403 |             | K406 |                          | K411 |             | K414 | K415 | K416 | K417 |
+        //                                                  | K507 | K508 |      | K510 | K511 |                                     
+        //                                                  | K607 | K608 |      | K610 | K611 |
 
         map = < 
-            RC(6,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)     RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(6,11)
-            RC(4,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)     RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(4,11)
-            RC(5,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)     RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(5,11)
-                                    RC(3,3) RC(3,4) RC(3,5)     RC(3,6) RC(3,7) RC(3,8)
+                    RC(0,2) RC(0,3) RC(0,4) RC(0,5)                                             RC(0,12) RC(0,13) RC(0,14) RC(0,15)
+            RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                                             RC(1,12) RC(1,13) RC(1,14) RC(1,15) RC(1,16)
+            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                                     RC(2,12) RC(2,13) RC(2,14) RC(2,15) RC(2,16) RC(2,17)
+            RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                                     RC(3,12) RC(3,13) RC(3,14) RC(3,15) RC(3,16) RC(3,17)
+            RC(4,0) RC(4,1) RC(4,2) RC(4,3)                 RC(4,6)                     RC(4,11)                 RC(4,14) RC(4,15) RC(4,16) RC(4,17)
+                                                                    RC(5,7) RC(5,8)     RC(5,10) RC(5,11)
+                                                                    RC(6,7) RC(6,8)     RC(6,10) RC(6,11)
         >;
     };
 
@@ -28,11 +35,12 @@
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
         diode-direction = "col2row";
-        row-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        // Row pins mapping from QMK: B0, B1, B2, B3, B4, B5, B6 (7 rows)
+        row-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
