@@ -82,7 +82,7 @@
         &kp ESC &kp A   &kp X          &kp C     &kp V      &kp B                                             &kp N       &kp M      &kp COMMA &kp DOT   &kp SEMI  &kp SQT
         &kp LSHFT &kp Z &kp LEFT       &kp RIGHT                    &kp LCTRL                         &kp LCTRL                      &kp UP    &kp DOWN  &kp FSLH  &kp RSHFT
                                                                                  &kp LALT   &kp LGUI  &kp LGUI  &kp ENTER
-                                                                                 &kp BSPC   &kp &studio_unlock   &kp BSPC  &kp SPACE
+                                                                                 &kp BSPC   &studio_unlock   &kp BSPC  &kp SPACE
             >;
         };
 
