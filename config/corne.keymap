@@ -6,8 +6,19 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/studio.h>
 
 / {
+    behaviors {
+        bslh_studio: bslh_studio {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&studio_unlock>, <&kp>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -78,7 +89,7 @@
             bindings = <
                         &kp N2         &kp N3    &kp N4     &kp N5                                            &kp N6      &kp N7     &kp N8    &kp N9
                 &kp N1  &kp W          &kp E     &kp R      &kp T                                             &kp Y       &kp U      &kp I     &kp O     &kp N0
-        &kp TAB &kp Q   &kp S          &kp D     &kp F      &kp G                                             &kp H       &kp J      &kp K     &kp L     &kp P     &kp BSLH
+        &kp TAB &kp Q   &kp S          &kp D     &kp F      &kp G                                             &kp H       &kp J      &kp K     &kp L     &kp P     &bslh_studio 0 BSLH
         &kp ESC &kp A   &kp X          &kp C     &kp V      &kp B                                             &kp N       &kp M      &kp COMMA &kp DOT   &kp SEMI  &kp SQT
         &kp LSHFT &kp Z &kp LEFT       &kp RIGHT                 &kp LCTRL                           &kp LCTRL                      &kp UP    &kp DOWN  &kp FSLH  &kp RSHFT
                                                                  &kp LALT   &kp LGUI       &kp LGUI  &kp ENTER
