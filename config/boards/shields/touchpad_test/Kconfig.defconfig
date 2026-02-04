@@ -1,0 +1,6 @@
+if SHIELD_TOUCHPAD_TEST
+
+config ZMK_KEYBOARD_NAME
+    default "Touchpad Test"
+
+endif
